@@ -1,0 +1,113 @@
+
+.Matrix{
+    width: 85%;
+    background-color: rgb(42, 42, 42);
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.table{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.canvas{
+    display: flex;
+    justify-content: center;
+}
+
+.canvas svg{
+    background-color: rgb(59, 59, 59);
+    border-radius: 10px;
+    border-width: 100px ;
+    margin-top: 20px;
+    width: 60%;
+    height: 400px;
+    cursor: crosshair;
+    justify-content: center;
+    border: 2px solid rgb(249, 42, 42);
+}
+
+.content{
+    background-color: aliceblue;
+    width: 100%;
+    padding: 55px;
+    font-size: 15px;
+    border-radius: 10px;
+    border-collapse: collapse;
+}
+
+.Scroll-pane{
+    width: 75%;
+    max-height: 450px;
+    border-radius: 10px;
+    overflow: auto;
+    margin: 10px;
+}
+
+
+.content td, .content th {
+  padding: 20px 40px;
+  border: 1px solid #000000;
+} 
+.row, .col, .corner{
+    color: white;
+    background: linear-gradient(180deg, rgb(222, 49, 49),rgb(115, 33, 48));
+    
+}
+
+
+.con{
+    color: white;
+    background-color: rgb(62, 59, 66);
+}
+
+.con:hover{
+    background-color: #16213e;
+    transition: 0.3s;
+}
+.data{
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.node-count, .edge-count{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgb(222, 49, 49),rgb(115, 33, 48));
+    width: 200px;
+    color: white;
+}
+.table h1{
+    color: white;
+}
+.Scroll-pane::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.Scroll-pane::-webkit-scrollbar-track {
+    background: #16213e;
+}
+.Scroll-pane::-webkit-scrollbar-thumb {
+    background: #e94560;
+    border-radius: 10px;
+}
+.button-class{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    gap: 20px;
+}
+.button-class button{
+    background: linear-gradient(180deg, rgb(222, 49, 49),rgb(115, 33, 48));
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+
+
+}
