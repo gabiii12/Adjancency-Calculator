@@ -175,7 +175,6 @@ export default function GraphCanvas() {
               y1={e.from.y}
               x2={e.to.x}
               y2={e.to.y}
-              stroke="#ff0000"
             />
           ))}
 
@@ -186,7 +185,7 @@ export default function GraphCanvas() {
                 cy={n.y}
                 r={20}
                 fill={selected === n ? "#ffffff" : "#363636"}
-                stroke={selected === n ? "#3b82f6" : "#ff0000"}
+                stroke={selected === n ? "#3b82f6" : "#ffffff"}
                 strokeWidth ={selected === n ? 5:3}
               />
               <text

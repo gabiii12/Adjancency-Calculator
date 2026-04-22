@@ -26,7 +26,7 @@
     height: 400px;
     cursor: crosshair;
     justify-content: center;
-    border: 2px solid rgb(249, 42, 42);
+    border: var(--background-color);
 }
 
 .content{
@@ -52,8 +52,8 @@
   border: 1px solid #000000;
 } 
 .row, .col, .corner{
-    color: white;
-    background: linear-gradient(180deg, rgb(222, 49, 49),rgb(115, 33, 48));
+    color:  var(--primary-text-color);
+    background: var(--background-color);
     
 }
 
@@ -78,9 +78,9 @@
     text-align: center;
     padding: 10px;
     border-radius: 10px;
-    background: linear-gradient(180deg, rgb(222, 49, 49),rgb(115, 33, 48));
+    background: var(--background-color);
     width: 200px;
-    color: white;
+    color: var(--primary-text-color);
 }
 .table h1{
     color: white;
@@ -103,11 +103,11 @@
     gap: 20px;
 }
 .button-class button{
-    background: linear-gradient(180deg, rgb(222, 49, 49),rgb(115, 33, 48));
+    background: var(--background-color);
     width: 150px;
     height: 30px;
     border-radius: 10px;
-    color: white;
+    color: var(--primary-text-color);
 
 
 }
