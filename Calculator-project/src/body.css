@@ -1,5 +1,5 @@
 body {
-  background: var(--background-color);
+  background-image: var(--background-image);
   color: var(--primary-text-color);
   min-height: 100vh;
   transition: background 0.3s ease, color 0.7s ease;

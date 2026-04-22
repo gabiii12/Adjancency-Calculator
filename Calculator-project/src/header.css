@@ -42,3 +42,7 @@
 .navbar a:hover {
   color: #185fa5;
 }
+.nav-links button{
+  background-color: var(--background-color);
+  border: 0px;
+}

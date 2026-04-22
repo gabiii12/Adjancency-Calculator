@@ -7,11 +7,13 @@
 }
 
 :root {
-  --background-color: linear-gradient(135deg, #e8f0fe 0%, #f0e8ff 50%, #fce8f3 100%);
+  --background-color: linear-gradient(135deg, #f8f6ff 0%, #f5f0ff 50%, #fff0f8 100%);
   --primary-text-color: black;
+  --background-image: url('/bg.png')
 }
 
 [data-theme="dark"] {
   --background-color: linear-gradient(135deg, #0d1117, #12101e, #1a0d14);
   --primary-text-color: white;
+  --background-image: url('/bgdark.png')
 }

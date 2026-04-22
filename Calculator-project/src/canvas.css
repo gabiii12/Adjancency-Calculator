@@ -1,15 +1,22 @@
-
-.Matrix{
-    width: 85%;
-    background-color: rgb(42, 42, 42);
-    margin: 0 auto;
-    border-radius: 5px;
+.Matrix {
+  width: 85%;
+  background-image: linear-gradient(rgba(0,0,100,0.1), rgba(0,0,0,0.3)), url('/cardbg.png');
+  background-size: cover;       
+  background-position: center;
+  border-radius: 20px;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); 
 }
 
-.table{
+.tablePage{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px; 
+    
 }
 
 .canvas{
@@ -27,6 +34,8 @@
     cursor: crosshair;
     justify-content: center;
     border: var(--background-color);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); 
+    border: 1px solid white;
 }
 
 .content{
@@ -82,8 +91,9 @@
     width: 200px;
     color: var(--primary-text-color);
 }
-.table h1{
+.tablePage h1{
     color: white;
+    padding-top: 30px;
 }
 .Scroll-pane::-webkit-scrollbar {
     width: 6px;
@@ -108,6 +118,27 @@
     height: 30px;
     border-radius: 10px;
     color: var(--primary-text-color);
+    border: 1px white solid;
+    transition: 0.3s;
 
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(120, 100, 255, 0.3);
+  border-color: rgba(150, 120, 255, 0.7);
+  transition: 0.3s;
+}
+
+
+
+.CalculateButton button{
+    background: var(--background-color);
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    color: var(--primary-text-color);
+    margin-top: 20px;
+    border: 1px white solid;
 
 }

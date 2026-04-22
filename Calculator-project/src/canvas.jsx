@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-
+import { useState, useRef, useEffect } from "react";
 import "./canvas.css"
 
 export default function GraphCanvas() {
@@ -30,7 +29,9 @@ export default function GraphCanvas() {
     setMatrix(m);
   };
 
-
+  useEffect(() => {
+    if (nodes.length === 0 ) setTable(false);
+  }, [nodes]);
 
   const handleClick = (e) => {
     const rect = svgRef.current.getBoundingClientRect();
@@ -257,11 +258,19 @@ export default function GraphCanvas() {
         </svg>
       </div>
       
-      <div className = "table">
+      <div className = "tablePage">
         <h1>Adjacency Matrix</h1>
-          {/*STORES THE NUMBER OF EDGES, NODES, AND DENSITY */}
-          <button onClick={() => setTable (true)}>Calculate Matrix</button>
+        <div className="CalculateButton">
+         {!disTable && nodes.length >=1 && (<button onClick={() => {
+        if (nodes.length == 0) return;
+         setTable(true);
+        }}
+        >Calculate Matrix</button>)}
+          </div>
+
           {disTable && displayTable(matrix)}
+
+          
          
     </div>
     </div>
