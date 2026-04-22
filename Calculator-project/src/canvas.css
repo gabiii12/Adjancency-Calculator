@@ -142,3 +142,40 @@ button:hover {
     border: 1px white solid;
 
 }
+
+@media (max-width: 480px){
+
+    .Matrix{
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 0;
+    }
+
+    .button-class button{
+        font-size: 10px;
+    }
+    .canvas svg{
+        width: 100%;
+        height: 320px;
+    }
+    .data{
+        flex-direction: row;
+        width: 80%;        /* fix: was 10px */
+        align-items: center;
+    }
+    .node-count, .edge-count{
+        font-size: 12px;
+        width: 120px;
+    }
+
+    .Scroll-pane{
+        width: 100%;
+    }
+    .content{
+        font-size: 10px;
+    }
+    .content td, .content th {
+        padding: 8px 12px;
+    }
+    }
