@@ -5,6 +5,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --background-color: linear-gradient(135deg, #f8f6ff 0%, #f5f0ff 50%, #fff0f8 100%);

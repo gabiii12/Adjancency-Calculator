@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import "./body.css";
 
 function Body() {
 
-  const navigate = useNavigate();
+
 
 
   return (
@@ -34,7 +33,7 @@ function Body() {
         </section>
 
         <div className="cta">
-          <button onClick={() => navigate('/Canvas')}>Get Started</button>
+          <button onClick={() => document.getElementById("Canvas").scrollIntoView({behavior : 'smooth'})}>Get Started</button>
         </div>
 
       </main>

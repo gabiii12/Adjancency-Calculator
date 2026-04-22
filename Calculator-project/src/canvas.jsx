@@ -183,7 +183,7 @@ export default function GraphCanvas() {
   }
   
   return (
-    <div className="Matrix">
+    <div className="Matrix" id = "Canvas">
       <div className=" button-class">
 
        {/*ACTION BUTTON*/}

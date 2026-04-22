@@ -23,9 +23,8 @@ function Header({ isDark, setIsDark }) {
       {/* Nav Links */}
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
         <li><a href="/" className="nav-link active">Home</a></li>
-        <li><a href="#" className="nav-link">About</a></li>
-        <li><a href="#" className="nav-link">How to Use</a></li>
-        <li><a href="#" className="nav-link">Contact</a></li>
+        <li><a href="#htu" className="nav-link">How to Use</a></li>
+        <li><a href="#Canvas" className="nav-link">Calculator</a></li>
         <li>
           <div className="ThemeButton">
           <button
