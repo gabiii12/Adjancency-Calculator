@@ -11,6 +11,7 @@ export default function GraphCanvas() {
   const [removeNode, setremoveNode] = useState(false);
   const [addEdge, setaddEdge] = useState(false);
   const [clearNodes, setClear] = useState(false);
+  const [disTable, setTable] = useState(false);
   const svgRef = useRef(null);
 
   const updateMatrix = (newNodes, newEdges) => {
@@ -107,7 +108,7 @@ export default function GraphCanvas() {
       setSelected(null);
       setaddNode(false);
       setremoveNode(false);
-      setEdge(false);
+      setaddEdge(false);
 
   }
 
@@ -124,8 +125,60 @@ export default function GraphCanvas() {
    
   }
 
-  const resetState = () => {
-    setEdges
+  const displayTable = (matrix) => {
+    return (
+      <>
+      <div className = "data">
+
+
+
+          <div className="node-count">
+            <h3>Node Count</h3>
+              <text>{nodes.length}</text>
+          </div>
+
+
+
+          <div className="edge-count">
+            <h3>Edge Count</h3>
+              <text>{edges.length}</text>
+          </div>
+
+          <div className="edge-count">
+            <h3>Density</h3>
+              <text>{MatrixDensity().toFixed(1)}%</text>
+          </div>
+        </div>
+        {matrix.length > 0 && (
+          <div className="Scroll-pane">
+          <table className="content">
+            <thead>
+              <tr>
+                <th className="corner"></th>
+                {nodes.map(n => <th className="col" key={n.label}>{n.label}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {matrix.map((row, i) => (
+                <tr className="con" key={i}>
+                  <th className="row">{nodes[i].label}</th>
+                  {row.map((cell, j) => (
+                    <td
+                      key={j}
+                      style = {{color: cell === 1 ? "red" : "inherit"}}
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        )}
+        </>
+    );
   }
   
   return (
@@ -154,7 +207,7 @@ export default function GraphCanvas() {
         >Connect Nodes</button>
         
         <button
-          onClick={() => { ClearAllEN();  setaddNode(false); setremoveNode(false); setaddEdge(false) }}
+          onClick={() => { ClearAllEN(); setTable(false);  setaddNode(false); setremoveNode(false); setaddEdge(false) }}
         >Clear all</button>
         
 
@@ -175,6 +228,7 @@ export default function GraphCanvas() {
               y1={e.from.y}
               x2={e.to.x}
               y2={e.to.y}
+              stroke="#ffffff"
             />
           ))}
 
@@ -205,62 +259,11 @@ export default function GraphCanvas() {
       
       <div className = "table">
         <h1>Adjacency Matrix</h1>
-
           {/*STORES THE NUMBER OF EDGES, NODES, AND DENSITY */}
-
-         <div className = "data">
-
-
-
-          <div className="node-count">
-            <h3>Node Count</h3>
-              <text>{nodes.length}</text>
-          </div>
-
-
-
-          <div className="edge-count">
-            <h3>Edge Count</h3>
-              <text>{edges.length}</text>
-          </div>
-
-          <div className="edge-count">
-            <h3>Density</h3>
-              <text>{MatrixDensity().toFixed(1)}%</text>
-          </div>
-
-
-
-
-        </div>
-        {matrix.length > 0 && (
-          <div className="Scroll-pane">
-          <table className="content">
-            <thead>
-              <tr>
-                <th className="corner"></th>
-                {nodes.map(n => <th className="col" key={n.label}>{n.label}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {matrix.map((row, i) => (
-                <tr className="con" key={i}>
-                  <th className="row">{nodes[i].label}</th>
-                  {row.map((cell, j) => (
-                    <td
-                      key={j}
-                      style = {{color: cell === 1 ? "red" : "inherit"}}
-                    >
-                      {cell}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        )}
-      </div>
+          <button onClick={() => setTable (true)}>Calculate Matrix</button>
+          {disTable && displayTable(matrix)}
+         
+    </div>
     </div>
   );
 }
