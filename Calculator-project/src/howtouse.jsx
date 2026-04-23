@@ -1,8 +1,27 @@
 import "./howtouse.css"
 
+
+import { useState } from "react";
+
 function howtouse(){
+
+    const [isVisible, setIsVisible] = useState(true);
+
+
+
     return(
         <>
+        <div className="htu-btn">
+        <button className="Toggle-btn" 
+        onClick={ () => setIsVisible(!isVisible)}>
+
+            {isVisible ? "Hide Instruction" : "How to use "}
+        </button>
+        </div>
+
+
+
+        {isVisible && (
         <div className="container" id = "htu">
             <h1>How to use Adjacency Matrix Calculator</h1>
             <p>
@@ -44,6 +63,7 @@ function howtouse(){
                 Click Clear All to reset the canvas and start with a fresh graph.
             </p>
         </div>
+        )};
 
 
 
